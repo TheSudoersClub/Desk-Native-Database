@@ -1,38 +1,27 @@
 // function to create a new collection (JSON file) in database
-import {
-    createCollection
-} from './lib/create-collection/createCollection.js';
+const createCollection = require('./lib/create-collection/createCollection.js');
 
 // data-access functions
-import {
-    getAllData
-} from "./lib/data-access/getAllData.js"
+const getAllData = require("./lib/data-access/getAllData.js");
 
-import {
-    getDataById
-} from "./lib/data-access/getDataById.js"
+const getDataById = require("./lib/data-access/getDataById.js");
 
 // data-manipulation functions
-import {
-    //  addData (insert)
-    addData
-} from './lib/data-manipulation/insert.js';
 
-import {
-    //  updateData (update)
-    updateData
-} from './lib/data-manipulation/update.js';
+//  addData (insert)
+const addData = require('./lib/data-manipulation/insert.js');
 
-import {
-    //  deleteData (delete)
-    deleteData
-} from './lib/data-manipulation/delete.js';
+
+//  updateData(update)
+const updateData = require('./lib/data-manipulation/update.js');
+
+
+//  deleteData (delete)  
+const deleteData = require('./lib/data-manipulation/delete.js');
 
 
 // desk-native-database
-export function database(dbDir) {
-    // Database directory path
-    const DB_DIR = dbDir;
+function database(DB_DIR) {
 
     // return the functions
     return {
@@ -44,3 +33,6 @@ export function database(dbDir) {
         deleteData: (filename, id, fields) => deleteData(DB_DIR, filename, id, fields)
     };
 }
+
+// export module
+module.exports = database;

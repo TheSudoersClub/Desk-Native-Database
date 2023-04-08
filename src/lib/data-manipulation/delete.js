@@ -1,9 +1,9 @@
-import {
+const {
     loadJSONFile,
     saveJSONFile
-} from "../helpers/helpers.js";
+} = require("../helpers/helpers.js");
 // Delete a data object from a JSON file by ID
-export function deleteData(DB_DIR, filename, id, fields) {
+function deleteData(DB_DIR, filename, id, fields) {
     const data = loadJSONFile(DB_DIR, filename);
     const index = data.findIndex(d => d.id === id);
     if (index === -1) {
@@ -25,3 +25,6 @@ export function deleteData(DB_DIR, filename, id, fields) {
     saveJSONFile(DB_DIR, filename, data);
     return true;
 }
+
+// export the module
+module.exports = deleteData;

@@ -1,8 +1,11 @@
-import {
+const {
     loadJSONFile
-} from '../helpers/helpers.js'
+} = require('../helpers/helpers.js');
 
 // Get all data from a JSON file
-export function getAllData(DB_DIR, filename) {
+function getAllData(DB_DIR, filename) {
     return loadJSONFile(DB_DIR, filename);
 }
+
+// export the module
+module.exports = getAllData

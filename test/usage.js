@@ -1,12 +1,10 @@
-import {
-    database
-} from '../src/database.js';
+const database = require('../src/database.cjs');
 
 // initialize the database (database dir holds all the json files from the database)
 const db = database("../database");
 
 // // create a new collection in database 
-// db.createCollection("hello");
+db.createCollection("hello");
 
 // // add new field in collection
 // let generatedId = db.addData("hello", {
@@ -22,8 +20,8 @@ const db = database("../database");
 // console.log(updated);
 
 // delete the specific field(s)
-const deleted = db.deleteData('hello', 1);
-console.log(deleted);
+// const deleted = db.deleteData('hello', 1);
+// console.log(deleted);
 
 // // get all the data form the given collection
 // let data = db.getAllData("hello")

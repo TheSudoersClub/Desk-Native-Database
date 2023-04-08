@@ -1,10 +1,10 @@
-import {
+const {
     loadJSONFile,
     saveJSONFile
-} from "../helpers/helpers.js";
+} = require("../helpers/helpers.js");
 
 // Update a data object in a JSON file
-export function updateData(DB_DIR, filename, id, newData) {
+function updateData(DB_DIR, filename, id, newData) {
     const data = loadJSONFile(DB_DIR, filename);
     const index = data.findIndex(d => d.id === id);
     if (index === -1) {
@@ -20,3 +20,6 @@ export function updateData(DB_DIR, filename, id, newData) {
     saveJSONFile(DB_DIR, filename, data);
     return true;
 }
+
+// export the module
+module.exports = updateData;
