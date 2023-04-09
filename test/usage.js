@@ -1,7 +1,7 @@
 const database = require('../src/database.cjs');
 
 // initialize the database (database dir holds all the json files from the database)
-const db = database("../database");
+const db = database();
 
 // // create a new collection in database 
 db.createCollection("hello");

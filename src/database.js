@@ -1,3 +1,6 @@
+const fs = require('fs');
+const path = require('path');
+
 // function to create a new collection (JSON file) in database
 const createCollection = require('./lib/create-collection/createCollection.js');
 
@@ -21,7 +24,10 @@ const deleteData = require('./lib/data-manipulation/delete.js');
 
 
 // desk-native-database
-function database(DB_DIR) {
+function database() {
+    const db_config_path = path.join(process.cwd(), 'config/desk-native-database/db_config.json');
+    const db_config = JSON.parse(fs.readFileSync(db_config_path));
+    const DB_DIR = db_config.path;
 
     // return the functions
     return {

@@ -1,11 +1,14 @@
 {
   "name": "desk-native-database",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "A simple JSON database by desk-native",
   "main": "src/database.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "TSC <thesudoersclug@gmail.com>",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "prompts": "^2.4.2"
+  }
 }
